@@ -30,7 +30,7 @@ down:
 
 generate_dot_env:
 	@if [[ ! -e .env ]]; then \
-		cp .env.example .env; \
+		cp .env.dist .env; \
 	fi
 
 clean:
