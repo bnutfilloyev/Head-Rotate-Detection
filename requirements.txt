@@ -1,4 +1,2 @@
-aiogram~=2.18
-environs~=9.0
-pymongo~=3.9
-motor~=2.0
+aiogram~=2.12
+environs~=8.0.0
