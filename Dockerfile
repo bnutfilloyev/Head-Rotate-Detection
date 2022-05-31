@@ -11,7 +11,8 @@ RUN apt-get update -y && \
 
 RUN pip install -r /usr/src/app/"${BOT_NAME:-tg_bot}"/requirements.txt
 
-RUN pip install --upgrade pip && \
-    pip install tensorflow \
+RUN pip install --upgrade pip
+
+RUN pip install tensorflow-gpu
 
 COPY . /usr/src/app/"${BOT_NAME:-tg_bot}"
