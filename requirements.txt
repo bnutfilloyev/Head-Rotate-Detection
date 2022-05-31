@@ -1,2 +1,5 @@
 aiogram~=2.12
 environs~=8.0.0
+opencv-python~=4.1.0
+numpy~=1.16.2
+tensoflow~=2.2.0
