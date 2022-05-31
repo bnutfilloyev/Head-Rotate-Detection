@@ -5,6 +5,8 @@ WORKDIR /usr/src/app/"${BOT_NAME:-tg_bot}"
 
 COPY requirements.txt /usr/src/app/"${BOT_NAME:-tg_bot}"
 
+
+RUN pip install -r /usr/src/app/"${BOT_NAME:-tg_bot}"/requirements.txt
 RUN apt-get update && apt-get install -y --no-install-recommends \
       bzip2 \
       g++ \
@@ -17,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       python3-tk && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install -r /usr/src/app/"${BOT_NAME:-tg_bot}"/requirements.txt
+
 RUN pip install --upgrade pip && \
     pip install tensorflow \
 
