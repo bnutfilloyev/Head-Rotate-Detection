@@ -21,12 +21,15 @@ install: generate_dot_env
 run:
 	python app.py
 
-deploy: generate_dot_env
+deploy:
 	docker-compose build
 	docker-compose up -d
 
 down:
 	docker-compose down
+
+logs:
+	docker-compose logs -f
 
 generate_dot_env:
 	@if [[ ! -e .env ]]; then \

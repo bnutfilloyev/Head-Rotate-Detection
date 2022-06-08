@@ -1,6 +1,3 @@
-import os
-from argparse import ArgumentParser
-
 import cv2
 
 from utils.mark_detector import MarkDetector
@@ -27,8 +24,8 @@ def image_main(image, width, height):
         marks[:, 1] += y1
 
         pose = pose_estimator.solve_pose_by_68_points(marks)
-
-        if pose[0][0] < -3:
+        print(pose[0][0])
+        if -0.2 > pose[0][0] > 0.2:
             color = (0, 0, 255)
             flag = "Head is turned"
         else:
