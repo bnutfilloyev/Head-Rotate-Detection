@@ -37,4 +37,5 @@ async def get_photo(msg: Message):
         await msg.answer("Image is Valid!")
         return
     image = cv2.imencode(".jpg", result[0])[1].tobytes()
+    await bot.send_photo(CHANEL, image, caption=result[-1])
     await msg.answer_photo(image, caption=result[-1])
